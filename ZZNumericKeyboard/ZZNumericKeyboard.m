@@ -2,14 +2,14 @@
 //  CustomKeyboard.m
 //  keyboard
 //
-//  Created by zz on 14-12-25.
-//  Copyright (c) 2014年 mac. All rights reserved.
+//  Created by zhaowang on 14-3-25.
+//  Copyright (c) 2014年 anyfish. All rights reserved.
 //
 
-#import "ZZNumericKeyboard.h"
+#import "AFFNumericKeyboard.h"
 #define kLineWidth 1
 #define kNumFont [UIFont systemFontOfSize:27]
-@implementation ZZNumericKeyboard
+@implementation AFFNumericKeyboard
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -108,7 +108,7 @@
     [button setImage:pressedColorImg forState:UIControlStateHighlighted];
     
     
-
+    
     if (num<10)
     {
         UILabel *labelNum = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, frameW, 28)];
@@ -148,6 +148,13 @@
     else
     {
         UIImageView *arrow = [[UIImageView alloc] initWithFrame:CGRectMake(42, 19, 22, 17)];
+        //        arrow.contentMode = UIViewContentModeCenter;
+        if ([UIScreen mainScreen].bounds.size.width > 320) {
+            CGFloat arrowX = 375/320.0 * 42;
+            CGFloat arrowW = 375/320.0 * 22;
+            arrow.frame = CGRectMake(arrowX, 19, arrowW, 17);
+        }
+        
         arrow.image = [UIImage imageNamed:@"arrowInKeyboard"];
         [button addSubview:arrow];
         
@@ -156,21 +163,25 @@
     return button;
 }
 
-static int onceTaken = 0;
+
 
 -(void)clickButton:(UIButton *)sender
 {
     if (sender.tag == 10)
     {
-//        [self.delegate changeKeyboardType];
+        //        [self.delegate changeKeyboardType];
         
-        [self.delegate stringKeyboardInput:@"."];
+        if ([self.delegate respondsToSelector:@selector(stringKeyboardInput:)]) {
+            [self.delegate stringKeyboardInput:@"."];
+        }
         
         return;
     }
     else if(sender.tag == 12)
     {
-        [self.delegate numberKeyboardBackspace];
+        if ([self.delegate respondsToSelector:@selector(numberKeyboardBackspace)]) {
+            [self.delegate numberKeyboardBackspace];
+        }
         
     }
     else
@@ -181,10 +192,12 @@ static int onceTaken = 0;
             num = 0;
         }
         
-        [self.delegate numberKeyboardInput:num];
+        if ([self.delegate respondsToSelector:@selector(numberKeyboardInput:)]) {
+            [self.delegate numberKeyboardInput:num];
+        }
+        
     }
 }
-
 
 
 

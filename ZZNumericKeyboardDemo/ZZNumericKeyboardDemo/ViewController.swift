@@ -9,15 +9,12 @@
 import UIKit
 
 
-
 extension String {
     
     func contains(_ find: String) -> Bool{
         return self.range(of: find) != nil
     }
 }
-
-
 
 class ViewController: UIViewController, ZZNumericKeyboardDelegate{
 

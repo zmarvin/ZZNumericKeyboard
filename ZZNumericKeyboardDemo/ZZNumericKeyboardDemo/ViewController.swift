@@ -12,8 +12,8 @@ import UIKit
 
 extension String {
     
-    func contains(find: String) -> Bool{
-        return self.rangeOfString(find) != nil
+    func contains(_ find: String) -> Bool{
+        return self.range(of: find) != nil
     }
 }
 
@@ -28,7 +28,7 @@ class ViewController: UIViewController, ZZNumericKeyboardDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        var keyboard = ZZNumericKeyboard(frame: CGRectMake(0, 200, UIScreen.mainScreen().bounds.width, 216))
+        let keyboard = ZZNumericKeyboard(frame: CGRect(x: 0, y: 200, width: UIScreen.main.bounds.width, height: 216))
         self.textField?.inputView = keyboard
         keyboard.delegate = self
         
@@ -37,26 +37,26 @@ class ViewController: UIViewController, ZZNumericKeyboardDelegate{
 
     
     func stringKeyboardInput(str: String) {
-        var textStr = self.textField?.text
-        var isContain = textStr?.contains(".")
+        let textStr = self.textField?.text
+        let isContain = textStr?.contains(".")
         if  isContain == true || textStr == nil {
             return
         }
-        self.textField?.text = textStr?.stringByAppendingString(str)
+        self.textField?.text = (textStr)! + str
         
     }
     
     func numberKeyboardInput(number: NSInteger) {
-        var str = self.textField?.text
-        self.textField?.text = str?.stringByAppendingString("\(number)")
+        let str = self.textField?.text
+        self.textField?.text = (str)! + "\(number)"
         
     }
     func numberKeyboardBackspace() {
-        var length = self.textField?.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
+        let length = self.textField?.text?.lengthOfBytes(using: String.Encoding.utf8)
         if  length != 0{
-            var str = self.textField?.text
+            let str = self.textField?.text
             
-            self.textField?.text = (str! as NSString ).substringToIndex(length! - 1)
+            self.textField?.text = (str! as NSString ).substring(to: length! - 1)
         }
     }
     

@@ -18,36 +18,34 @@ let str : NSString = "123"
 class ZZNumericKeyboard: UIView {
     
     var delegate : ZZNumericKeyboardDelegate?
-    var numFont : UIFont = UIFont.systemFontOfSize(27)
+    var numFont : UIFont = UIFont.systemFont(ofSize: 27)
     let arrLetter = ["ABC","DEF","GHI","JKL","MNO","PQRS","TUV","WXYZ"]
     let lineWidth : CGFloat = 1
-    var screenW = UIScreen.mainScreen().bounds.size.width
+    var screenW = UIScreen.main.bounds.size.width
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.bounds = CGRectMake(0, 0, screenW, 216)
-        
-        for  var i = 0; i < 4 ; i++ {
-            for var j = 0 ; j<3 ; j++ {
-                var button = self.creatButton(i, y: j)
+        self.bounds = CGRect(x: 0, y: 0, width: screenW, height: 216)
+
+        for  i in 0 ..< 4  {
+            for j in 0  ..< 3  {
+                let button = self.creatButton(x: i, y: j)
                 self.addSubview(button)
             }
         }
         
-        var color : UIColor = UIColor(red: 188/255.0, green: 192/255.0, blue: 199/255.0, alpha: 1)
-        
+        let color : UIColor = UIColor(red: 188/255.0, green: 192/255.0, blue: 199/255.0, alpha: 1)
         let w = screenW/3.0
-        var line1 = UIView(frame: CGRectMake(w - lineWidth, 0, lineWidth, 216))
+        let line1 = UIView(frame: CGRect(x: w - lineWidth, y: 0,width: lineWidth, height: 216))
         line1.backgroundColor = color
         self.addSubview(line1)
-        
-        
-        var line2 = UIView(frame: CGRectMake( 2*w+1 , 0, lineWidth, 216))
+
+        let line2 = UIView(frame: CGRect(x: 2*w+1, y: 0, width: lineWidth,height:216))
         line2.backgroundColor = color
         self.addSubview(line2)
         
-        for var i = 0; i < 3 ; i++ {
-            var line:UIView = UIView(frame: CGRectMake(0.0, 54.0*CGFloat(i+1), screenW, lineWidth))
+        for i in 0 ..< 3  {
+            let line:UIView = UIView(frame: CGRect(x:0.0, y:54.0*CGFloat(i+1), width:screenW, height:lineWidth))
             line.backgroundColor = color
             self.addSubview(line)
         }
@@ -61,9 +59,9 @@ class ZZNumericKeyboard: UIView {
     
     
     private func creatButton(x:NSInteger,y:NSInteger) ->(UIButton){
-        var button : UIButton?
+        let button = UIButton()
         
-        var w = UIScreen.mainScreen().bounds.width/3.0
+        let w = UIScreen.main.bounds.width/3.0
         var frameX : CGFloat?
         var frameW : CGFloat?
         
@@ -80,82 +78,84 @@ class ZZNumericKeyboard: UIView {
             default:
                 break
         }
-        var frameY : CGFloat = 54 * CGFloat(x)
+        let frameY : CGFloat = 54 * CGFloat(x)
+
+        button.frame = CGRect.init(x:frameX!, y: frameY, width: frameW!, height: 54)
+
         
-        button = UIButton(frame: CGRectMake(frameX!, frameY, frameW!, 54))
-        
-        
-        var num : NSInteger = y + 3*x + 1;
-        button?.tag = num
-        button?.addTarget(self, action:Selector("clickButton:"), forControlEvents: UIControlEvents.TouchUpInside)
+        let num : NSInteger = y + 3*x + 1;
+        button.tag = num
+        button.addTarget(self, action:#selector(self.clickButton(btn:)), for: UIControlEvents.touchUpInside)
         
         var colorNormal : UIColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 1)
         var colorHightlighted : UIColor = UIColor(red: 186.0/255, green: 189.0/255, blue: 194.0/255, alpha: 1.0)
         
         if num == 10 || num == 12{
-            var colorTemp = colorNormal
+            let colorTemp = colorNormal
             colorNormal = colorHightlighted
             colorHightlighted = colorTemp
         }
-        button?.backgroundColor = colorNormal
+        button.backgroundColor = colorNormal
         
-        var imageSize :CGSize = CGSizeMake(frameW!, 54);
-        UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.mainScreen().scale)
+        let imageSize :CGSize = CGSize(width: frameW!, height: 54);
+        UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.main.scale)
         colorHightlighted.set()
-        UIRectFill(CGRectMake(0, 0, imageSize.width, imageSize.height))
+
+        UIRectFill(CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
         
-        var pressedColorImg : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        let pressedColorImg : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-        button?.setImage(pressedColorImg, forState: UIControlState.Highlighted)
+        button.setImage(pressedColorImg, for: UIControlState.highlighted)
         
         if num < 10{
-            var labelNum:UILabel = UILabel(frame: CGRectMake(0, 5, frameW!, 28))
+            let labelNum:UILabel = UILabel(frame: CGRect(x: 0, y: 5, width: frameW!, height: 28))
             labelNum.text = "\(num)"
-            labelNum.textColor = UIColor.blackColor()
-            labelNum.textAlignment = NSTextAlignment.Center
+            labelNum.textColor = UIColor.black
+            labelNum.textAlignment = NSTextAlignment.center
             labelNum.font = numFont
-            button?.addSubview(labelNum)
+            button.addSubview(labelNum)
             
             if num != 1 {
-                var labelLetter : UILabel = UILabel(frame: CGRectMake(0, 33, frameW!, 16))
+                let labelLetter : UILabel = UILabel(frame: CGRect(x: 0, y: 33, width: frameW!, height: 16))
                 labelLetter.text = arrLetter[num - 2]
-                labelLetter.textColor = UIColor.blackColor()
-                labelLetter.textAlignment = NSTextAlignment.Center;
-                button?.addSubview(labelLetter)
+                labelLetter.textColor = UIColor.black
+                labelLetter.textAlignment = NSTextAlignment.center;
+                button.addSubview(labelLetter)
             }
             
         }else if num == 11
         {
-            var label:UILabel = UILabel(frame: CGRectMake(0, 15, frameW!, 28))
+            let label:UILabel = UILabel(frame: CGRect(x: 0, y: 15, width: frameW!, height: 28))
             label.text = "0"
-            label.textColor = UIColor.blackColor()
-            label.textAlignment = NSTextAlignment.Center
+            label.textColor = UIColor.black
+            label.textAlignment = NSTextAlignment.center
             label.font = numFont
-            button?.addSubview(label)
+            button.addSubview(label)
         }else if num == 10
         {
-            var label:UILabel = UILabel(frame: CGRectMake(0, 15, frameW!, 28))
+            let label:UILabel = UILabel(frame: CGRect(x: 0, y: 15, width: frameW!, height: 28))
             label.text = "."
-            label.textColor = UIColor.blackColor()
-            label.textAlignment = NSTextAlignment.Center
+            label.textColor = UIColor.black
+            label.textAlignment = NSTextAlignment.center
             
-            button?.addSubview(label)
+            button.addSubview(label)
         }else
         {
-            var arrow:UIImageView = UIImageView(frame: CGRectMake(0, 15, frameW!, 28))
+            let arrow:UIImageView = UIImageView(frame: CGRect(x: 0, y: 15, width: frameW!, height: 28))
             
-            if UIScreen.mainScreen().bounds.size.width > 320 {
-                var arrowX : CGFloat = 375/320.0 * 42
-                var arrowW : CGFloat = 375/320.0 * 22
-                arrow.frame = CGRectMake(arrowX, 19, arrowW, 17)
+            if UIScreen.main.bounds.size.width > 320 {
+                let arrowX : CGFloat = 375/320.0 * 42
+                let arrowW : CGFloat = 375/320.0 * 22
+                
+                arrow.frame = CGRect(x: arrowX, y: 19, width: arrowW, height: 17)
                 
             }
             
             arrow.image = UIImage(named: "arrowInKeyboard")
-            button?.addSubview(arrow)
+            button.addSubview(arrow)
         }
         
-        return button!;
+        return button;
     }
     
     
@@ -163,7 +163,7 @@ class ZZNumericKeyboard: UIView {
         
         switch btn.tag{
             case 10:
-                self.delegate?.stringKeyboardInput(".")
+                self.delegate?.stringKeyboardInput(str: ".")
             case 12:
                 self.delegate?.numberKeyboardBackspace()
             default:
@@ -171,7 +171,7 @@ class ZZNumericKeyboard: UIView {
                 if num == 11 {
                     num = 0
                 }
-                self.delegate?.numberKeyboardInput(num)
+                self.delegate?.numberKeyboardInput(number: num)
             break
             
         }

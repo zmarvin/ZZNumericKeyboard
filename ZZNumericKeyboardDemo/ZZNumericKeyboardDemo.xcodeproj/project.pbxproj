@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A3CE3141E11793900470922 /* arrowInKeyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3CE3121E11793900470922 /* arrowInKeyboard.png */; };
+		3A3CE3151E11793900470922 /* ZZNumericKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3CE3131E11793900470922 /* ZZNumericKeyboard.swift */; };
 		3A58083B1B6A67D900E34B9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A58083A1B6A67D900E34B9D /* AppDelegate.swift */; };
 		3A58083D1B6A67D900E34B9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A58083C1B6A67D900E34B9D /* ViewController.swift */; };
 		3A5808401B6A67D900E34B9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A58083E1B6A67D900E34B9D /* Main.storyboard */; };
 		3A5808421B6A67D900E34B9D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A5808411B6A67D900E34B9D /* Images.xcassets */; };
 		3A5808451B6A67D900E34B9D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A5808431B6A67D900E34B9D /* LaunchScreen.xib */; };
 		3A5808511B6A67DA00E34B9D /* ZZNumericKeyboardDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5808501B6A67DA00E34B9D /* ZZNumericKeyboardDemoTests.swift */; };
-		3A5808701B6B1FA800E34B9D /* arrowInKeyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A58086E1B6B1FA800E34B9D /* arrowInKeyboard.png */; };
-		3A5808711B6B1FA800E34B9D /* ZZNumericKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A58086F1B6B1FA800E34B9D /* ZZNumericKeyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A3CE3121E11793900470922 /* arrowInKeyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowInKeyboard.png; sourceTree = "<group>"; };
+		3A3CE3131E11793900470922 /* ZZNumericKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZNumericKeyboard.swift; sourceTree = "<group>"; };
 		3A5808351B6A67D900E34B9D /* ZZNumericKeyboardDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZNumericKeyboardDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A5808391B6A67D900E34B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A58083A1B6A67D900E34B9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,8 +40,6 @@
 		3A58084A1B6A67DA00E34B9D /* ZZNumericKeyboardDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZZNumericKeyboardDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A58084F1B6A67DA00E34B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A5808501B6A67DA00E34B9D /* ZZNumericKeyboardDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZNumericKeyboardDemoTests.swift; sourceTree = "<group>"; };
-		3A58086E1B6B1FA800E34B9D /* arrowInKeyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowInKeyboard.png; sourceTree = "<group>"; };
-		3A58086F1B6B1FA800E34B9D /* ZZNumericKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZNumericKeyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +60,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A3CE3111E11793900470922 /* ZZNumericKeyboardSwift */ = {
+			isa = PBXGroup;
+			children = (
+				3A3CE3121E11793900470922 /* arrowInKeyboard.png */,
+				3A3CE3131E11793900470922 /* ZZNumericKeyboard.swift */,
+			);
+			name = ZZNumericKeyboardSwift;
+			path = ../ZZNumericKeyboardSwift;
+			sourceTree = "<group>";
+		};
 		3A58082C1B6A67D900E34B9D = {
 			isa = PBXGroup;
 			children = (
-				3A58085A1B6A67F300E34B9D /* ZZNumericKeyboard */,
+				3A3CE3111E11793900470922 /* ZZNumericKeyboardSwift */,
 				3A5808371B6A67D900E34B9D /* ZZNumericKeyboardDemo */,
 				3A58084D1B6A67DA00E34B9D /* ZZNumericKeyboardDemoTests */,
 				3A5808361B6A67D900E34B9D /* Products */,
@@ -117,24 +127,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3A58085A1B6A67F300E34B9D /* ZZNumericKeyboard */ = {
-			isa = PBXGroup;
-			children = (
-				3A58086D1B6B1FA800E34B9D /* ZZNumericKeyboardSwift */,
-			);
-			path = ZZNumericKeyboard;
-			sourceTree = "<group>";
-		};
-		3A58086D1B6B1FA800E34B9D /* ZZNumericKeyboardSwift */ = {
-			isa = PBXGroup;
-			children = (
-				3A58086E1B6B1FA800E34B9D /* arrowInKeyboard.png */,
-				3A58086F1B6B1FA800E34B9D /* ZZNumericKeyboard.swift */,
-			);
-			name = ZZNumericKeyboardSwift;
-			path = ../../ZZNumericKeyboardSwift;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -184,9 +176,11 @@
 				TargetAttributes = {
 					3A5808341B6A67D900E34B9D = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0820;
 					};
 					3A5808491B6A67DA00E34B9D = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0820;
 						TestTargetID = 3A5808341B6A67D900E34B9D;
 					};
 				};
@@ -216,7 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A5808401B6A67D900E34B9D /* Main.storyboard in Resources */,
-				3A5808701B6B1FA800E34B9D /* arrowInKeyboard.png in Resources */,
+				3A3CE3141E11793900470922 /* arrowInKeyboard.png in Resources */,
 				3A5808451B6A67D900E34B9D /* LaunchScreen.xib in Resources */,
 				3A5808421B6A67D900E34B9D /* Images.xcassets in Resources */,
 			);
@@ -237,7 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A58083D1B6A67D900E34B9D /* ViewController.swift in Sources */,
-				3A5808711B6B1FA800E34B9D /* ZZNumericKeyboard.swift in Sources */,
+				3A3CE3151E11793900470922 /* ZZNumericKeyboard.swift in Sources */,
 				3A58083B1B6A67D900E34B9D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +362,7 @@
 				INFOPLIST_FILE = ZZNumericKeyboardDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -378,6 +373,7 @@
 				INFOPLIST_FILE = ZZNumericKeyboardDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -396,6 +392,7 @@
 				INFOPLIST_FILE = ZZNumericKeyboardDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZZNumericKeyboardDemo.app/ZZNumericKeyboardDemo";
 			};
 			name = Debug;
@@ -411,6 +408,7 @@
 				INFOPLIST_FILE = ZZNumericKeyboardDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZZNumericKeyboardDemo.app/ZZNumericKeyboardDemo";
 			};
 			name = Release;

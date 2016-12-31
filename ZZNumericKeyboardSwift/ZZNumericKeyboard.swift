@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objc(ZZNumericKeyboardDelegate)
 protocol ZZNumericKeyboardDelegate {
     func numberKeyboardInput(number : NSInteger) ->()
     func stringKeyboardInput(str : String) ->()
@@ -17,11 +18,12 @@ protocol ZZNumericKeyboardDelegate {
 let str : NSString = "123"
 class ZZNumericKeyboard: UIView {
     
-    var delegate : ZZNumericKeyboardDelegate?
-    var numFont : UIFont = UIFont.systemFont(ofSize: 27)
-    let arrLetter = ["ABC","DEF","GHI","JKL","MNO","PQRS","TUV","WXYZ"]
-    let lineWidth : CGFloat = 1
-    var screenW = UIScreen.main.bounds.size.width
+    open weak var delegate : ZZNumericKeyboardDelegate?
+    open var numFont : UIFont = UIFont.systemFont(ofSize: 27)
+    
+    fileprivate let arrLetter = ["ABC","DEF","GHI","JKL","MNO","PQRS","TUV","WXYZ"]
+    fileprivate let lineWidth : CGFloat = 1
+    fileprivate var screenW = UIScreen.main.bounds.size.width
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,7 +51,6 @@ class ZZNumericKeyboard: UIView {
             line.backgroundColor = color
             self.addSubview(line)
         }
-        
         
     }
 

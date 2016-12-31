@@ -20,7 +20,6 @@ class ViewController: UIViewController, ZZNumericKeyboardDelegate{
 
     @IBOutlet weak var textField: UITextField!
     var doneButton:UIButton?
-//    var textField:UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()

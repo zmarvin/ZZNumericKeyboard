@@ -1,8 +1,8 @@
 //
-//  CustomKeyboard.h
-//  keyboard
+//  ZZNumericKeyboard.h
+//  ZZNumericKeyboard
 //
-//  Created by zz on 14-12-25.
+//  Created by zz on 15/7/30.
 //  Copyright (c) 2014年 mac. All rights reserved.
 //
 
@@ -13,12 +13,13 @@
 - (void) numberKeyboardInput:(NSInteger)number;
 - (void) stringKeyboardInput:(NSString *)str;
 - (void) numberKeyboardBackspace;
-//- (void) changeKeyboardType;
+
 @end
 
 @interface ZZNumericKeyboard : UIView
 {
     NSArray *arrLetter;
 }
-@property (nonatomic,assign) id<ZZNumericKeyboardDelegate> delegate;
+@property (nonatomic,weak) id<ZZNumericKeyboardDelegate> delegate;
+
 @end

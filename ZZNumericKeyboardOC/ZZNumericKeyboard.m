@@ -1,26 +1,24 @@
 //
-//  CustomKeyboard.m
-//  keyboard
+//  ZZNumericKeyboard.m
+//  ZZNumericKeyboard
 //
-//  Created by zhaowang on 14-3-25.
-//  Copyright (c) 2014年 anyfish. All rights reserved.
+//  Created by zz on 15/7/30.
+//  Copyright (c) 2014年 mac. All rights reserved.
 //
 
-#import "AFFNumericKeyboard.h"
+#import "ZZNumericKeyboard.h"
 #define kLineWidth 1
 #define kNumFont [UIFont systemFontOfSize:27]
-@implementation AFFNumericKeyboard
+@implementation ZZNumericKeyboard
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.bounds = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 216);
-        //
+        
         arrLetter = [NSArray arrayWithObjects:@"ABC",@"DEF",@"GHI",@"JKL",@"MNO",@"PQRS",@"TUV",@"WXYZ", nil];
         
-        
-        //
         for (int i=0; i<4; i++)
         {
             for (int j=0; j<3; j++)
@@ -31,7 +29,6 @@
         }
         
         UIColor *color = [UIColor colorWithRed:188/255.0 green:192/255.0 blue:199/255.0 alpha:1];
-        //
         
         CGFloat w = [UIScreen mainScreen].bounds.size.width/3.0;
         
@@ -81,10 +78,8 @@
     }
     CGFloat frameY = 54*x;
     
-    //
     button = [[UIButton alloc] initWithFrame:CGRectMake(frameX, frameY, frameW, 54)];
     
-    //
     NSInteger num = y+3*x+1;
     button.tag = num;
     [button addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
@@ -169,9 +164,8 @@
 {
     if (sender.tag == 10)
     {
-        //        [self.delegate changeKeyboardType];
         
-        if ([self.delegate respondsToSelector:@selector(stringKeyboardInput:)]) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(stringKeyboardInput:)]) {
             [self.delegate stringKeyboardInput:@"."];
         }
         
@@ -179,7 +173,7 @@
     }
     else if(sender.tag == 12)
     {
-        if ([self.delegate respondsToSelector:@selector(numberKeyboardBackspace)]) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(numberKeyboardBackspace)]) {
             [self.delegate numberKeyboardBackspace];
         }
         

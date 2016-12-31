@@ -15,8 +15,8 @@
 		3A5808421B6A67D900E34B9D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A5808411B6A67D900E34B9D /* Images.xcassets */; };
 		3A5808451B6A67D900E34B9D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A5808431B6A67D900E34B9D /* LaunchScreen.xib */; };
 		3A5808511B6A67DA00E34B9D /* ZZNumericKeyboardDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5808501B6A67DA00E34B9D /* ZZNumericKeyboardDemoTests.swift */; };
-		3AC4A1B21E17FB6700F2693C /* arrowInKeyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AC4A1AF1E17FB6700F2693C /* arrowInKeyboard.png */; };
-		3AC4A1B31E17FB6700F2693C /* ZZNumericKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4A1B11E17FB6700F2693C /* ZZNumericKeyboard.m */; };
+		3AC4A1BE1E17FCD200F2693C /* arrowInKeyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AC4A1BB1E17FCD200F2693C /* arrowInKeyboard.png */; };
+		3AC4A1BF1E17FCD200F2693C /* ZZNumericKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4A1BD1E17FCD200F2693C /* ZZNumericKeyboard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,9 +42,9 @@
 		3A58084A1B6A67DA00E34B9D /* ZZNumericKeyboardDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZZNumericKeyboardDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A58084F1B6A67DA00E34B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A5808501B6A67DA00E34B9D /* ZZNumericKeyboardDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZNumericKeyboardDemoTests.swift; sourceTree = "<group>"; };
-		3AC4A1AF1E17FB6700F2693C /* arrowInKeyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowInKeyboard.png; sourceTree = "<group>"; };
-		3AC4A1B01E17FB6700F2693C /* ZZNumericKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNumericKeyboard.h; sourceTree = "<group>"; };
-		3AC4A1B11E17FB6700F2693C /* ZZNumericKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNumericKeyboard.m; sourceTree = "<group>"; };
+		3AC4A1BB1E17FCD200F2693C /* arrowInKeyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowInKeyboard.png; sourceTree = "<group>"; };
+		3AC4A1BC1E17FCD200F2693C /* ZZNumericKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNumericKeyboard.h; sourceTree = "<group>"; };
+		3AC4A1BD1E17FCD200F2693C /* ZZNumericKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNumericKeyboard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +78,7 @@
 		3A58082C1B6A67D900E34B9D = {
 			isa = PBXGroup;
 			children = (
-				3AC4A1AE1E17FB6700F2693C /* ZZNumericKeyboardOC */,
+				3AC4A1BA1E17FCD200F2693C /* ZZNumericKeyboardOC */,
 				3A3CE3111E11793900470922 /* ZZNumericKeyboardSwift */,
 				3A5808371B6A67D900E34B9D /* ZZNumericKeyboardDemo */,
 				3A58084D1B6A67DA00E34B9D /* ZZNumericKeyboardDemoTests */,
@@ -133,14 +133,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3AC4A1AE1E17FB6700F2693C /* ZZNumericKeyboardOC */ = {
+		3AC4A1BA1E17FCD200F2693C /* ZZNumericKeyboardOC */ = {
 			isa = PBXGroup;
 			children = (
-				3AC4A1AF1E17FB6700F2693C /* arrowInKeyboard.png */,
-				3AC4A1B01E17FB6700F2693C /* ZZNumericKeyboard.h */,
-				3AC4A1B11E17FB6700F2693C /* ZZNumericKeyboard.m */,
+				3AC4A1BB1E17FCD200F2693C /* arrowInKeyboard.png */,
+				3AC4A1BC1E17FCD200F2693C /* ZZNumericKeyboard.h */,
+				3AC4A1BD1E17FCD200F2693C /* ZZNumericKeyboard.m */,
 			);
-			path = ZZNumericKeyboardOC;
+			name = ZZNumericKeyboardOC;
+			path = ../ZZNumericKeyboardOC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,7 +229,7 @@
 				3A5808401B6A67D900E34B9D /* Main.storyboard in Resources */,
 				3A3CE3141E11793900470922 /* arrowInKeyboard.png in Resources */,
 				3A5808451B6A67D900E34B9D /* LaunchScreen.xib in Resources */,
-				3AC4A1B21E17FB6700F2693C /* arrowInKeyboard.png in Resources */,
+				3AC4A1BE1E17FCD200F2693C /* arrowInKeyboard.png in Resources */,
 				3A5808421B6A67D900E34B9D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,7 +250,7 @@
 			files = (
 				3A58083D1B6A67D900E34B9D /* ViewController.swift in Sources */,
 				3A3CE3151E11793900470922 /* ZZNumericKeyboard.swift in Sources */,
-				3AC4A1B31E17FB6700F2693C /* ZZNumericKeyboard.m in Sources */,
+				3AC4A1BF1E17FCD200F2693C /* ZZNumericKeyboard.m in Sources */,
 				3A58083B1B6A67D900E34B9D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

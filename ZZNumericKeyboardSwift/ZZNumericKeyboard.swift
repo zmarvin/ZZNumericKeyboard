@@ -83,7 +83,6 @@ class ZZNumericKeyboard: UIView {
 
         button.frame = CGRect.init(x:frameX!, y: frameY, width: frameW!, height: 54)
 
-        
         let num : NSInteger = y + 3*x + 1;
         button.tag = num
         button.addTarget(self, action:#selector(self.clickButton(btn:)), for: UIControlEvents.touchUpInside)
